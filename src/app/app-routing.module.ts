@@ -5,6 +5,10 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+  },
+  {
+    path: 'crediario-detalhe',
+    loadChildren: () => import('./pages/crediario-detalhe/crediario-detalhe.module').then( m => m.CrediarioDetalhePageModule)
   }
 ];
 @NgModule({

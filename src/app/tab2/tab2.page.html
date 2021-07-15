@@ -8,15 +8,15 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card class="ion-margin" *ngFor="let crediario of crediarios" (tap)='showCrediario(crediario)'>
+  <ion-card class="ion-margin" *ngFor="let crediario of crediarios" (click)='showCrediario(crediario)'>
     <ion-card-header>
       <ion-card-subtitle>Carnê</ion-card-subtitle>
       <ion-card-title>{{crediario.descricao}}</ion-card-title>
     </ion-card-header>
   
     <ion-card-content>
-     <div>{{crediario.vencimento}}</div>
-     <div><b>{{crediario.valor | currency:'BRL':'symbol':'1.2-2'}}</b></div>
+      <div>{{crediario.proximoVencimento | date:'shortDate'}}</div>
+      <div><b>{{crediario.valorTotal | currency:'BRL':'symbol':'1.2-2'}}</b></div>
     </ion-card-content>
   </ion-card>
 </ion-content>
