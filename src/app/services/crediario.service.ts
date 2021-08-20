@@ -13,10 +13,18 @@ export class CrediarioService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getCrediarios(clienteId: number) {
+  getCrediariosByClient(clienteId: number) {
     return this.httpClient
         .get<Crediario[]>(this.endpoint + '/crediarios/?clienteid=' + clienteId)
         .pipe<Crediario[]>(
+          tap(console.log)
+        );
+  }
+
+  getCrediarioById(id: number) {
+    return this.httpClient
+        .get<Crediario>(this.endpoint + '/crediario/?id=' + id)
+        .pipe<Crediario>(
           tap(console.log)
         );
   }

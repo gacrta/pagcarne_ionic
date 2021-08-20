@@ -1,9 +1,30 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>crediarioDetalhe</ion-title>
+<ion-header>  
+  <ion-toolbar color="primary">    
+    <ion-item button color="translucent">
+      <ion-icon name="chevron-back-outline" (click)='onBackClicked()'></ion-icon>
+      <ion-title>{{crediario?.descricao}}</ion-title>
+    </ion-item> 
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
-
+  <ion-card class="ion-margin">
+    <ion-card-header>
+      <ion-card-subtitle>Cliente</ion-card-subtitle>
+      <ion-card-title>Fulano da Silva</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-card-subtitle>Total de Parcelas</ion-card-subtitle>
+      <ion-card-title>{{crediario?.qtdeParcelas}}</ion-card-title>
+      <br>
+      <ion-card-subtitle>Próximo Vencimento</ion-card-subtitle>
+      <ion-card-title>{{crediario?.proximoVencimento | date:'shortDate'}}</ion-card-title>
+      <br>
+      <ion-card-subtitle>Valor</ion-card-subtitle>
+      <ion-card-title>{{crediario?.valorTotal | currency:'BRL':'symbol':'1.2-2'}}</ion-card-title>
+      <br>
+      <ion-card-subtitle>Taxa de Juros</ion-card-subtitle>
+      <ion-card-title>{{crediario?.taxaJuros / 100 | percent:'1.2'}} ao mês</ion-card-title>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

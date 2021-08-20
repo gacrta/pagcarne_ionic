@@ -7,7 +7,7 @@ const routes: Routes = [
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
   {
-    path: 'crediario-detalhe',
+    path: 'crediario-detalhe/:id',
     loadChildren: () => import('./pages/crediario-detalhe/crediario-detalhe.module').then( m => m.CrediarioDetalhePageModule)
   }
 ];
